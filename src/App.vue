@@ -2,6 +2,7 @@
 import InputData from './components/InputData.vue';
 import VCard from './components/VCard.vue';
 import ListPrice from './components/ListPrice.vue';
+import CustomerType from './components/CustomerType.vue';
 import { ref, provide } from 'vue';
 
 let arr = ref([])
@@ -15,6 +16,7 @@ provide('arr', arr)
     <VCard>
       <InputData v-model="modelValue" />
       <ListPrice />
+      <CustomerType />
     </VCard>
   </div>
 </template>
