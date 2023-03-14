@@ -1,6 +1,5 @@
 <script setup>
 import { defineProps, defineEmits, inject } from 'vue'
-const arr = inject('arr')
 
 const props = defineProps({
     modelValue: {

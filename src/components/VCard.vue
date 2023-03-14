@@ -27,7 +27,7 @@ const getBackgroundColor = () => {
 
 <template>
     <div class="w-full h-full" :class="firstDiv ? 'flex justify-center items-center' : ''">
-        <div class="mx-auto" :class="width + ' ' + height + ' rounded-3xl' + ' ' + getBackgroundColor()">
+        <div class="" :class="width + ' ' + height + ' rounded-3xl' + ' ' + getBackgroundColor()">
             <slot></slot>
         </div>
     </div>
