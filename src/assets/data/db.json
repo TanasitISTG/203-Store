@@ -84,6 +84,16 @@
         "date": "2018-01-01",
         "time": "12:00:00"
       }
+    },
+    {
+      "amount": 803,
+      "customerType": "Guest",
+      "discount": "0%",
+      "date": "2023-03-19",
+      "time": "4:02:58 AM",
+      "isEditted": false,
+      "oldData": null,
+      "id": 6
     }
   ]
 }
