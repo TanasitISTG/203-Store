@@ -6,7 +6,9 @@ import Cashier from './components/Cashier/Cashier.vue';
 
 <template>
     <NavBar />
-    <Header title="Cashier" />
+    <div class="w-1/2 flex justify-center -ml-14 mt-12">
+        <Header title="Cashier" style="color: teal" />
+    </div>
     <div class="w-full h-full flex justify-center">
         <Cashier />
     </div>
