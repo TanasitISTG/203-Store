@@ -123,7 +123,7 @@ watch([amountArray.value, customerType], () => {
         </div>
 
         <div class="flex flex-col mx-10">
-            <p class="text-right text-3xl font-semibold" style="color: grey">Subtotal: {{ getTotalWithoutDiscount() }} ฿</p>
+            <p class="text-right text-3xl font-semibold" style="color: grey">Subtotal: {{ getTotal() }} ฿</p>
             <p class="text-right text-3xl font-semibold" style="color: red">Discount: {{ getDiscount() }} ฿</p>
             <p class="text-right text-3xl font-semibold" style="color: green">Total: {{ getTotalWithDiscount() }} ฿</p>
             <div class="flex flex-row justify-end mt-2">
