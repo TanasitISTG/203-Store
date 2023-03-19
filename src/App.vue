@@ -2,6 +2,7 @@
 import NavBar from './components/NavBar.vue';
 import Header from './components/Header.vue';
 import Cashier from './components/Cashier/Cashier.vue';
+import History from './components/History/History.vue';
 </script>
 
 <template>
@@ -10,7 +11,8 @@ import Cashier from './components/Cashier/Cashier.vue';
         <Header title="Cashier" style="color: teal" />
     </div>
     <div class="w-full h-full flex justify-center">
-        <Cashier />
+        <!-- <Cashier /> -->
+        <History />
     </div>
 </template>
 
