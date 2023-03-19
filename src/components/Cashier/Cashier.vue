@@ -32,25 +32,15 @@ const addAmount = () => {
 
     testArr.value.push(parseInt(amount.value));
     amount.value = '';
-    checkDiscount();
 }
 
 const removeAmount = (index) => {
     testArr.value.splice(index, 1);
-    checkDiscount();
 }
 
 watch([testArr.value, customerType], () => {
-    if (customerType.value === 'guest') {
-        if (getTotalWithoutDiscount() >= 400) {
-            discount.value = 5;
-        }
-        if (getTotalWithoutDiscount() >= 800) {
-            discount.value = 10;
-        }
-        if (getTotalWithoutDiscount() < 400) {
-            discount.value = 0;
-        }
+    if (customerType.value === 'Guest') {
+        discount.value = 0;
     } else {
         if (getTotalWithoutDiscount() >= 400) {
             discount.value = 5;
