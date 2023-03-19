@@ -5,7 +5,7 @@ import BaseCard from '../Base/BaseCard.vue';
 let amount = ref('');
 let testArr = ref([100, 200, 1, 1, 1]);
 let discount = ref(0);
-let customerType = ref('guest')
+let customerType = ref('Guest')
 
 const getTotalWithoutDiscount = () => {
     let total = 0;
@@ -78,7 +78,7 @@ watch([testArr.value, customerType], () => {
                 <p class="text-lg font-semibold">No.</p>
                 <div v-for="(amount, index) in testArr" :key="index">
                     <p class="text-lg font-semibold">{{ index + 1 }}. {{ amount }}</p>
-                    <hr />
+                    <hr class="border-stone-500" />
                 </div>
             </div>
         </BaseCard>
@@ -86,14 +86,14 @@ watch([testArr.value, customerType], () => {
         <div class="w-4/5 flex flex-col mx-10">
             <div class="flex flex-row space-x-2 mt-4">
                 <p>Customer:</p>
-                <input type="radio" name="radio-1" class="radio" value="guest" v-model="customerType" checked />
+                <input type="radio" name="radio-1" class="radio" value="Guest" v-model="customerType" checked />
                 <p>Guest</p>
-                <input type="radio" name="radio-1" class="radio radio-base-100" value="customer" v-model="customerType" />
+                <input type="radio" name="radio-1" class="radio radio-base-100" value="Customer" v-model="customerType" />
                 <p>Customer</p>
             </div>
 
             <div class="flex flex-col mt-4">
-                <p>Discount (Member): </p>
+                <p>Discount ({{ customerType }}): </p>
                 <div class="flex flex-row space-x-2 mt-2">
                     <div class="w-20 h-14 rounded-xl" :class="discount === 5 ? 'bg-green-500' : 'bg-[#D7D7D7]'">
                         <div class="flex flex-col justify-center items-center h-full">
