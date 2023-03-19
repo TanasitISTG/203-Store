@@ -1,7 +1,7 @@
 <script setup>
 import { ref, watch } from 'vue';
 import BaseCard from '../Base/BaseCard.vue';
-import MaterialSymbolsDelete from '../Icons/MaterialSymbolsDelete.vue';
+import DeleteIcon from '../Icons/DeleteIcon.vue';
 
 let amount = ref('');
 let testArr = ref([100, 200, 1, 1, 1]);
@@ -78,7 +78,7 @@ watch([testArr.value, customerType], () => {
                             <p class="text-lg font-semibold">{{ index + 1 }}. {{ amount }}</p>
                         </div>
                         <div class="w-1/2 flex justify-end items-center">
-                            <MaterialSymbolsDelete class="cursor-pointer" @click="removeAmount(index)" />
+                            <DeleteIcon class="cursor-pointer" @click="removeAmount(index)" />
                         </div>
                     </div>
                     <hr class="border-stone-500" />
