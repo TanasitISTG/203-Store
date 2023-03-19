@@ -9,14 +9,12 @@ let historyItems = ref([]);
 
 const deleteHistory = async (id) => {
     try {
-        const response = await fetch(`http://localhost:3000/history/${id}`, {
+        const response = await fetch(`http://localhost:3001/history/${id}`, {
             method: 'DELETE',
         });
 
         if (response.ok) {
             historyItems.value = historyItems.value.filter((item) => { return item.id !== id });
-
-
         }
     } catch (error) {
         console.log(error);
