@@ -2,12 +2,19 @@
 import { ref, watch } from 'vue';
 import BaseCard from '../Base/BaseCard.vue';
 import DeleteIcon from '../Icons/DeleteIcon.vue';
-import { getTotal } from '../../composables/getTotal';
 
 let amount = ref('');
 let amountArray = ref([100, 200, 1, 1, 1]);
 let discount = ref(0);
 let customerType = ref('Guest')
+
+const getTotal = () => {
+    let total = 0;
+    amountArray.value.forEach((amount) => {
+        total += parseInt(amount);
+    });
+    return total;
+};
 
 const getTotalWithDiscount = () => {
     return getTotal() - (getTotal() * discount.value / 100);
