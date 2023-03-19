@@ -2,26 +2,19 @@
 import { ref, watch } from 'vue';
 import BaseCard from '../Base/BaseCard.vue';
 import DeleteIcon from '../Icons/DeleteIcon.vue';
+import { getTotal } from '../../composables/getTotal';
 
 let amount = ref('');
-let testArr = ref([100, 200, 1, 1, 1]);
+let amountArray = ref([100, 200, 1, 1, 1]);
 let discount = ref(0);
 let customerType = ref('Guest')
 
-const getTotalWithoutDiscount = () => {
-    let total = 0;
-    testArr.value.forEach((amount) => {
-        total += parseInt(amount);
-    });
-    return total;
-}
-
 const getTotalWithDiscount = () => {
-    return getTotalWithoutDiscount() - (getTotalWithoutDiscount() * discount.value / 100);
+    return getTotal() - (getTotal() * discount.value / 100);
 }
 
 const getDiscount = () => {
-    return getTotalWithoutDiscount() * discount.value / 100;
+    return getTotal() * discount.value / 100;
 }
 
 const addAmount = () => {
@@ -30,31 +23,31 @@ const addAmount = () => {
         return;
     }
 
-    testArr.value.push(parseInt(amount.value));
+    amountArray.value.push(parseInt(amount.value));
     amount.value = '';
 }
 
 const removeAmount = (index) => {
-    testArr.value.splice(index, 1);
+    amountArray.value.splice(index, 1);
 }
 
-watch([testArr.value, customerType], () => {
+watch([amountArray.value, customerType], () => {
     if (customerType.value === 'Guest') {
         discount.value = 0;
     } else {
-        if (getTotalWithoutDiscount() >= 400) {
+        if (getTotal() >= 400) {
             discount.value = 5;
         }
-        if (getTotalWithoutDiscount() >= 800) {
+        if (getTotal() >= 800) {
             discount.value = 10;
         }
-        if (getTotalWithoutDiscount() >= 1200) {
+        if (getTotal() >= 1200) {
             discount.value = 20;
         }
-        if (getTotalWithoutDiscount() >= 1600) {
+        if (getTotal() >= 1600) {
             discount.value = 30;
         }
-        if (getTotalWithoutDiscount() < 400) {
+        if (getTotal() < 400) {
             discount.value = 0;
         }
     }
@@ -72,7 +65,7 @@ watch([testArr.value, customerType], () => {
         <BaseCard width="w-1/1" height="h-1/3" backgroundColor="bg-white" class="mx-10 mt-6 overflow-auto scrollbar">
             <div class="w-2/3 h-ful mx-auto pt-4">
                 <p class="text-lg font-semibold">No.</p>
-                <div v-for="(amount, index) in testArr" :key="index">
+                <div v-for="(amount, index) in amountArray" :key="index">
                     <div class="w-full flex flex-row">
                         <div class="w-1/2 flex justify-start">
                             <p class="text-lg font-semibold">{{ index + 1 }}. {{ amount }}</p>
