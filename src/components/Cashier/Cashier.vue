@@ -1,6 +1,7 @@
 <script setup>
 import { ref, watch } from 'vue';
 import BaseCard from '../Base/BaseCard.vue';
+import MaterialSymbolsDelete from '../Icons/MaterialSymbolsDelete.vue';
 
 let amount = ref('');
 let testArr = ref([100, 200, 1, 1, 1]);
@@ -31,6 +32,11 @@ const addAmount = () => {
 
     testArr.value.push(parseInt(amount.value));
     amount.value = '';
+    checkDiscount();
+}
+
+const removeAmount = (index) => {
+    testArr.value.splice(index, 1);
     checkDiscount();
 }
 
@@ -77,7 +83,14 @@ watch([testArr.value, customerType], () => {
             <div class="w-2/3 h-ful mx-auto pt-4">
                 <p class="text-lg font-semibold">No.</p>
                 <div v-for="(amount, index) in testArr" :key="index">
-                    <p class="text-lg font-semibold">{{ index + 1 }}. {{ amount }}</p>
+                    <div class="w-full flex flex-row">
+                        <div class="w-1/2 flex justify-start">
+                            <p class="text-lg font-semibold">{{ index + 1 }}. {{ amount }}</p>
+                        </div>
+                        <div class="w-1/2 flex justify-end items-center">
+                            <MaterialSymbolsDelete class="cursor-pointer" @click="removeAmount(index)" />
+                        </div>
+                    </div>
                     <hr class="border-stone-500" />
                 </div>
             </div>
