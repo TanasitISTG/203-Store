@@ -1,0 +1,89 @@
+{
+  "history": [
+    {
+      "id": 1,
+      "amount": 100,
+      "customerType": "Customer",
+      "discount": "10%",
+      "date": "2018-01-01",
+      "time": "12:00:00",
+      "isEditted": true,
+      "oldData": {
+        "id": 1,
+        "amount": 1000,
+        "customerType": "Customer",
+        "discount": "20%",
+        "date": "2018-01-01",
+        "time": "12:00:00"
+      }
+    },
+    {
+      "id": 2,
+      "amount": 200,
+      "customerType": "Customer",
+      "discount": "10%",
+      "date": "2018-01-01",
+      "time": "12:00:00",
+      "isEditted": true,
+      "oldData": {
+        "id": 2,
+        "amount": 2000,
+        "customerType": "Customer",
+        "discount": "20%",
+        "date": "2018-01-01",
+        "time": "12:00:00"
+      }
+    },
+    {
+      "id": 3,
+      "amount": 300,
+      "customerType": "Customer",
+      "discount": "10%",
+      "date": "2018-01-01",
+      "time": "12:00:00",
+      "isEditted": true,
+      "oldData": {
+        "id": 3,
+        "amount": 3000,
+        "customerType": "Customer",
+        "discount": "20%",
+        "date": "2018-01-01",
+        "time": "12:00:00"
+      }
+    },
+    {
+      "id": 4,
+      "amount": 400,
+      "customerType": "Customer",
+      "discount": "10%",
+      "date": "2018-01-01",
+      "time": "12:00:00",
+      "isEditted": true,
+      "oldData": {
+        "id": 4,
+        "amount": 4000,
+        "customerType": "Customer",
+        "discount": "20%",
+        "date": "2018-01-01",
+        "time": "12:00:00"
+      }
+    },
+    {
+      "id": 5,
+      "amount": 500,
+      "customerType": "Customer",
+      "discount": "10%",
+      "date": "2018-01-01",
+      "time": "12:00:00",
+      "isEditted": true,
+      "oldData": {
+        "id": 5,
+        "amount": 5000,
+        "customerType": "Customer",
+        "discount": "20%",
+        "date": "2018-01-01",
+        "time": "12:00:00"
+      }
+    }
+  ]
+}
