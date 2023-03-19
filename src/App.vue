@@ -11,8 +11,8 @@ import History from './components/History/History.vue';
         <Header title="Cashier" style="color: teal" />
     </div>
     <div class="w-full h-full flex justify-center">
-        <!-- <Cashier /> -->
-        <History />
+        <Cashier />
+        <!-- <History /> -->
     </div>
 </template>
 
