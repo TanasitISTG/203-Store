@@ -38,6 +38,34 @@ const removeAmount = (index) => {
     amountArray.value.splice(index, 1);
 }
 
+const addToHistory = async () => {
+    try {
+        const response = await fetch('http://localhost:3001/history', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                amount: getTotalWithDiscount(),
+                customerType: customerType.value,
+                discount: `${discount.value}%`,
+                date: new Date().toISOString().split('T')[0],
+                time: new Date().toLocaleTimeString(),
+                isEditted: false,
+                oldData: null
+            })
+        });
+
+        if (response.ok) {
+            amountArray.value = [];
+            discount.value = 0;
+            customerType.value = 'Guest';
+        }
+    } catch (error) {
+        console.error(error);
+    }
+}
+
 watch([amountArray.value, customerType], () => {
     if (customerType.value === 'Guest') {
         discount.value = 0;
@@ -127,7 +155,7 @@ watch([amountArray.value, customerType], () => {
             <p class="text-right text-3xl font-semibold" style="color: red">Discount: {{ getDiscount() }} ฿</p>
             <p class="text-right text-3xl font-semibold" style="color: green">Total: {{ getTotalWithDiscount() }} ฿</p>
             <div class="flex flex-row justify-end mt-2">
-                <button class="btn gap-2 w-36">
+                <button class="btn gap-2 w-36" @click="addToHistory()">
                     Confirm
                     <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                         stroke="currentColor">
