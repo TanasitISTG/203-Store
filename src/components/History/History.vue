@@ -3,6 +3,7 @@ import { onMounted, ref, computed } from 'vue';
 
 import BaseCard from '../Base/BaseCard.vue';
 import EditIcon from '../Icons/EditIcon.vue';
+import Row from './Row.vue';
 import { getAllHistory, getHistoryById } from '../../composables/getHistory';
 
 let historyItems = ref([]);
@@ -35,56 +36,52 @@ onMounted(async () => {
 });
 </script>
 
-<!-- could've improve with slot, will do it later. -->
 <template>
-    <BaseCard width="w-3/5" height="h-2/3" backgroundColor="bg-[#F1F1F1]">
-        <div class="flex flex-col mt-5">
-            <div class="flex flex-row">
-                <div class="w-1/4 flex justify-center">
+    <div class="w-3/5 h-2/3">
+        <BaseCard width="w-full" height="h-full" backgroundColor="bg-[#F1F1F1]" class="scrollbar overflow-auto">
+            <Row>
+                <template #firstRow>
                     <p class="text-bold text-2xl">Date</p>
-                </div>
-                <div class="w-1/4 flex justify-center">
+                </template>
+                <template #secondRow>
                     <p class="text-bold text-2xl">Customer Type</p>
-                </div>
-                <div class="w-1/4 flex justify-center">
+                </template>
+                <template #thirdRow>
                     <p class="text-bold text-2xl">Discount</p>
-                </div>
-                <div class="w-1/4 flex justify-center">
+                </template>
+                <template #fourthRow>
                     <p class="text-bold text-2xl">Amount</p>
-                </div>
-            </div>
-        </div>
+                </template>
+            </Row>
 
 
-        <div v-for="item in historyItems" :key="item.id">
-            <div class="flex flex-col mt-5">
-                <div class="flex flex-row">
-                    <div class="w-1/4 flex justify-center items-center">
-                        <EditIcon class="mr-2" />
+            <div v-for="item in historyItems" :key="item.id">
+                <Row>
+                    <template #firstRow>
+                        <EditIcon class="mr-2 my-auto" />
                         <p>{{ item.date }} - {{ item.time }}</p>
-                    </div>
-                    <div class="w-1/4 flex justify-center">
+                    </template>
+                    <template #secondRow>
                         <p>{{ item.customerType }}</p>
-                    </div>
-                    <div class="w-1/4 flex justify-center">
+                    </template>
+                    <template #thirdRow>
                         <p class="text-red-500">{{ item.discount }}</p>
-                    </div>
-                    <div class="w-1/4 flex justify-center">
+                    </template>
+                    <template #fourthRow>
                         <p>{{ item.amount }} ฿</p>
-                    </div>
-                </div>
+                    </template>
+                </Row>
             </div>
-        </div>
-
+        </BaseCard>
         <div class="flex flex-row mt-5">
             <div class="w-1/4 flex justify-center"></div>
             <div class="w-1/4 flex justify-center"></div>
             <div class="w-1/4 flex justify-center"></div>
             <div class="w-1/4 flex justify-center">
-                <p class="text-bold text-2xl">Total {{ getTotalAmount }} ฿</p>
+                <p class="text-extrabold text-3xl">Total {{ getTotalAmount }} ฿</p>
             </div>
         </div>
-    </BaseCard>
+    </div>
 </template>
 
 <style scoped></style>
