@@ -7,7 +7,7 @@
       "discount": "10%",
       "date": "2018-01-01",
       "time": "12:00:00",
-      "isEditted": true,
+      "isEdited": true,
       "oldData": {
         "id": 1,
         "amount": 1000,
@@ -24,7 +24,7 @@
       "discount": "10%",
       "date": "2018-01-01",
       "time": "12:00:00",
-      "isEditted": true,
+      "isEdited": true,
       "oldData": {
         "id": 2,
         "amount": 2000,
@@ -41,7 +41,7 @@
       "discount": "10%",
       "date": "2018-01-01",
       "time": "12:00:00",
-      "isEditted": true,
+      "isEdited": true,
       "oldData": {
         "id": 3,
         "amount": 3000,
@@ -58,7 +58,7 @@
       "discount": "10%",
       "date": "2018-01-01",
       "time": "12:00:00",
-      "isEditted": true,
+      "isEdited": true,
       "oldData": {
         "id": 4,
         "amount": 4000,
@@ -75,7 +75,7 @@
       "discount": "10%",
       "date": "2018-01-01",
       "time": "12:00:00",
-      "isEditted": true,
+      "isEdited": true,
       "oldData": {
         "id": 5,
         "amount": 5000,
@@ -91,7 +91,7 @@
       "discount": "0%",
       "date": "2023-03-19",
       "time": "4:02:58 AM",
-      "isEditted": false,
+      "isEdited": false,
       "oldData": null,
       "id": 6
     },
@@ -101,7 +101,7 @@
       "discount": "10%",
       "date": "2023-03-20",
       "time": "17:31:02",
-      "isEditted": false,
+      "isEdited": false,
       "oldData": null,
       "id": 7
     },
@@ -111,7 +111,7 @@
       "discount": "0%",
       "date": "2023-03-20",
       "time": "18:08:52",
-      "isEditted": false,
+      "isEdited": false,
       "oldData": null,
       "id": 8
     },
@@ -121,7 +121,7 @@
       "discount": "0%",
       "date": "2023-03-20",
       "time": "18:09:02",
-      "isEditted": false,
+      "isEdited": false,
       "oldData": null,
       "id": 9
     },
@@ -131,7 +131,7 @@
       "discount": "5%",
       "date": "2023-03-20",
       "time": "18:10:01",
-      "isEditted": false,
+      "isEdited": false,
       "oldData": null,
       "id": 10
     },
@@ -141,7 +141,7 @@
       "discount": "5%",
       "date": "2023-03-20",
       "time": "18:10:19",
-      "isEditted": false,
+      "isEdited": false,
       "oldData": null,
       "id": 11
     },
@@ -151,7 +151,7 @@
       "discount": "0%",
       "date": "2023-03-20",
       "time": "18:10:36",
-      "isEditted": false,
+      "isEdited": false,
       "oldData": null,
       "id": 12
     },
@@ -161,7 +161,7 @@
       "discount": "30%",
       "date": "2023-03-20",
       "time": "18:11:04",
-      "isEditted": false,
+      "isEdited": false,
       "oldData": null,
       "id": 13
     },
@@ -171,7 +171,7 @@
       "discount": "0%",
       "date": "2023-03-20",
       "time": "18:11:08",
-      "isEditted": false,
+      "isEdited": false,
       "oldData": null,
       "id": 14
     }
