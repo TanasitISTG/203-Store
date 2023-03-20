@@ -50,7 +50,7 @@ const addToHistory = async () => {
                 customerType: customerType.value,
                 discount: `${discount.value}%`,
                 date: new Date().toISOString().split('T')[0],
-                time: new Date().toLocaleTimeString(),
+                time: new Date().toLocaleTimeString('en-US', { hour12: false }),
                 isEditted: false,
                 oldData: null
             })
@@ -60,6 +60,8 @@ const addToHistory = async () => {
             amountArray.value = [];
             discount.value = 0;
             customerType.value = 'Guest';
+        } else {
+            throw new Error('Something went wrong');
         }
     } catch (error) {
         console.error(error);
