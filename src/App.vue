@@ -8,11 +8,11 @@ import History from './components/History/History.vue';
 <template>
     <NavBar />
     <div class="w-1/2 flex justify-center -ml-14 mt-12">
-        <Header title="Cashier" style="color: teal" />
+        <Header title="Cashier" />
     </div>
     <div class="w-full h-full flex justify-center">
-        <Cashier />
-        <!-- <History /> -->
+        <!-- <Cashier /> -->
+        <History />
     </div>
 </template>
 
