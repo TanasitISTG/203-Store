@@ -15,6 +15,8 @@ const deleteHistory = async (id) => {
 
         if (response.ok) {
             historyItems.value = historyItems.value.filter((item) => { return item.id !== id });
+        } else {
+            throw new Error('Something went wrong');
         }
     } catch (error) {
         console.log(error);
@@ -22,12 +24,9 @@ const deleteHistory = async (id) => {
 };
 
 const getTotalAmount = computed(() => {
-    let total = 0
-    historyItems.value.forEach((item) => {
-        total += parseInt(item.amount);
-    });
-
-    return total;
+    return historyItems.value.reduce((total, item) => {
+        return total + item.amount;
+    }, 0);
 });
 
 onMounted(async () => {
