@@ -104,6 +104,76 @@
       "isEditted": false,
       "oldData": null,
       "id": 7
+    },
+    {
+      "amount": 303,
+      "customerType": "Guest",
+      "discount": "0%",
+      "date": "2023-03-20",
+      "time": "18:08:52",
+      "isEditted": false,
+      "oldData": null,
+      "id": 8
+    },
+    {
+      "amount": 101,
+      "customerType": "Guest",
+      "discount": "0%",
+      "date": "2023-03-20",
+      "time": "18:09:02",
+      "isEditted": false,
+      "oldData": null,
+      "id": 9
+    },
+    {
+      "amount": 972.8,
+      "customerType": "Customer",
+      "discount": "5%",
+      "date": "2023-03-20",
+      "time": "18:10:01",
+      "isEditted": false,
+      "oldData": null,
+      "id": 10
+    },
+    {
+      "amount": 393.3,
+      "customerType": "Customer",
+      "discount": "5%",
+      "date": "2023-03-20",
+      "time": "18:10:19",
+      "isEditted": false,
+      "oldData": null,
+      "id": 11
+    },
+    {
+      "amount": 1082,
+      "customerType": "Guest",
+      "discount": "0%",
+      "date": "2023-03-20",
+      "time": "18:10:36",
+      "isEditted": false,
+      "oldData": null,
+      "id": 12
+    },
+    {
+      "amount": 7211.4,
+      "customerType": "Customer",
+      "discount": "30%",
+      "date": "2023-03-20",
+      "time": "18:11:04",
+      "isEditted": false,
+      "oldData": null,
+      "id": 13
+    },
+    {
+      "amount": 2324,
+      "customerType": "Guest",
+      "discount": "0%",
+      "date": "2023-03-20",
+      "time": "18:11:08",
+      "isEditted": false,
+      "oldData": null,
+      "id": 14
     }
   ]
 }
