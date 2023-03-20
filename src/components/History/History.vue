@@ -69,6 +69,7 @@ onMounted(async () => {
                     </template>
                     <template #fourthRow>
                         <p>{{ item.amount }} ฿</p>
+                        <div v-if="item.isEdited" class="text-gray-500 ml-3">(edited)</div>
                     </template>
                 </Row>
             </div>
