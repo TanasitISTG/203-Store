@@ -94,6 +94,16 @@
       "isEditted": false,
       "oldData": null,
       "id": 6
+    },
+    {
+      "amount": 902.7,
+      "customerType": "Customer",
+      "discount": "10%",
+      "date": "2023-03-20",
+      "time": "17:31:02",
+      "isEditted": false,
+      "oldData": null,
+      "id": 7
     }
   ]
 }
