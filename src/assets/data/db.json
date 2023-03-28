@@ -1,16 +1,60 @@
 {
   "history": [
     {
-      "amount": 77777.70000000001,
+      "amount": 999.9,
       "customerType": "Customer",
-      "discountPercentage": 30,
-      "timestamp": "28/3/2566 18:10:45",
+      "discountPercentage": 10,
+      "timestamp": "28/3/2566 18:25:25",
       "amounts": [
-        111111
+        1111
       ],
       "isEditted": false,
       "oldData": null,
       "id": 1
+    },
+    {
+      "amount": 527.25,
+      "customerType": "Customer",
+      "discountPercentage": 5,
+      "timestamp": "28/3/2566 18:25:54",
+      "amounts": [
+        555
+      ],
+      "isEditted": false,
+      "oldData": null,
+      "id": 2
+    },
+    {
+      "amount": 111,
+      "customerType": "Guest",
+      "discountPercentage": 0,
+      "timestamp": "28/3/2566 18:27:09",
+      "amounts": [
+        111
+      ],
+      "isEditted": false,
+      "oldData": null,
+      "id": 3
+    },
+    {
+      "amount": 0,
+      "customerType": "Customer",
+      "discountPercentage": 0,
+      "timestamp": "28/3/2566 18:48:12",
+      "amounts": [],
+      "isEditted": false,
+      "oldData": null,
+      "id": 4
+    },
+    {
+      "amount": 0,
+      "customerType": "Guest",
+      "discountPercentage": 0,
+      "timestamp": "28/3/2566 18:48:15",
+      "amounts": [],
+      "isEditted": false,
+      "oldData": null,
+      "id": 5
     }
   ]
 }
