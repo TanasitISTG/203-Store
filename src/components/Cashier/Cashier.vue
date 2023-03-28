@@ -26,6 +26,10 @@ const removeAmount = (index) => {
 }
 
 const addToHistory = async () => {
+    if (amountArray.value.length === 0) {
+        return;
+    }
+
     try {
         const response = await fetch('http://localhost:3001/history', {
             method: 'POST',
