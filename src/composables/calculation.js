@@ -8,7 +8,6 @@ const getTotal = (amounts) => {
 };
 
 const getDiscount = (discountValue, amounts) => {
-  console.log(getTotal(amounts) * (discountValue / 100));
   return getTotal(amounts) * (discountValue / 100);
 };
 
