@@ -3,7 +3,7 @@
 </script>
 
 <template>
-    <div class="flex flex-col mt-5">
+    <div class="flex flex-col mb-5">
         <div class="flex flex-row">
             <div class="w-1/4 flex justify-center">
                 <slot name="firstRow"></slot>

@@ -4,6 +4,8 @@ import { onMounted, ref, computed } from 'vue';
 import BaseCard from '../Base/BaseCard.vue';
 import EditIcon from '../Icons/EditIcon.vue';
 import Row from './Row.vue';
+import Header from '../Header.vue';
+
 import { getAllHistory, getHistoryById } from '../../composables/getHistory';
 
 let historyItems = ref([]);
@@ -37,9 +39,10 @@ onMounted(async () => {
 </script>
 
 <template>
-    <div class="w-3/5 h-2/3">
-        <BaseCard width="w-full" height="h-full" backgroundColor="bg-[#F1F1F1]" class="scrollbar overflow-auto">
-            <Row>
+    <div class="w-full h-full flex flex-col items-center">
+        <Header title="History" class="m-5" />
+        <BaseCard width="w-3/5" height="h-2/3" backgroundColor="bg-[#F1F1F1]" class="scrollbar overflow-auto">
+            <Row class="mt-5 mb-0">
                 <template #firstRow>
                     <p class="text-bold text-2xl">Date</p>
                 </template>
@@ -54,18 +57,19 @@ onMounted(async () => {
                 </template>
             </Row>
 
+            <hr class="m-4" />
 
             <div v-for="item in historyItems" :key="item.id">
                 <Row>
                     <template #firstRow>
                         <EditIcon class="mr-2 my-auto" />
-                        <p>{{ item.date }} - {{ item.time }}</p>
+                        <p>{{ item.timestamp }}</p>
                     </template>
                     <template #secondRow>
                         <p>{{ item.customerType }}</p>
                     </template>
                     <template #thirdRow>
-                        <p class="text-red-500">{{ item.discount }}</p>
+                        <p class="text-red-500">{{ item.discountPercentage }}%</p>
                     </template>
                     <template #fourthRow>
                         <p>{{ item.amount }} ฿</p>
@@ -74,15 +78,17 @@ onMounted(async () => {
                 </Row>
             </div>
         </BaseCard>
-        <div class="flex flex-row mt-5">
-            <div class="w-1/4 flex justify-center"></div>
-            <div class="w-1/4 flex justify-center"></div>
-            <div class="w-1/4 flex justify-center"></div>
-            <div class="w-1/4 flex justify-center">
-                <p class="text-extrabold text-3xl">Total {{ getTotalAmount }} ฿</p>
-            </div>
+
+        <div class="w-3/5 flex justify-end mt-4">
+            <p class="text-extrabold text-3xl font-poppins">Total {{ getTotalAmount }} ฿</p>
         </div>
     </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+hr {
+    background-color: #000000;
+    border: 0 none;
+    height: 1px;
+}
+</style>
