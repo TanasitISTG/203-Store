@@ -1,15 +1,24 @@
 <script setup>
-import { ref, watch } from 'vue';
+import { onMounted, ref, watch } from 'vue';
 import BaseCard from '../Base/BaseCard.vue';
 import DeleteIcon from '../Icons/DeleteIcon.vue';
 import Header from '../Header.vue';
 
 import { getTotal, getDiscount, getTotalWithDiscount } from '../../composables/calculation';
+import { numberFormat } from '../../composables/numberFormat';
+
+const emits = defineEmits(['edit', 'cancel'])
+const props = defineProps({
+    history: {
+        type: Object,
+    }
+});
 
 let amount = ref('');
 let amountArray = ref([]);
 let discount = ref(0);
 let customerType = ref('Guest')
+let updatedHistory = ref({});
 
 const addAmount = () => {
     if (amount.value === '' || parseInt(amount.value) === 0 || amount.value.length === 0 || isNaN(amount.value) || amount.value === null || amount.value === undefined) {
@@ -37,13 +46,13 @@ const addToHistory = async () => {
                 'Content-Type': 'application/json'
             },
             body: JSON.stringify({
-                amount: getTotalWithDiscount(discount.value, amountArray.value),
+                total: getTotalWithDiscount(discount.value, amountArray.value),
                 customerType: customerType.value,
                 discountPercentage: discount.value,
-                timestamp: new Date().toLocaleString('th-TH', { hour12: false }),
+                datetime: new Date().toLocaleString('th-TH', { hour12: false }),
                 amounts: amountArray.value,
-                isEditted: false,
-                oldData: null
+                isEdited: false,
+                // oldData: null,
             })
         });
 
@@ -59,7 +68,39 @@ const addToHistory = async () => {
     }
 }
 
-watch([amountArray.value, customerType], () => {
+const confirmButtonHandler = () => {
+    if (props.history === undefined) {
+        addToHistory();
+    } else {
+        console.log('emitting edit');
+        console.log(props.history);
+        updatedHistory.value = {
+            id: props.history.id,
+            total: getTotalWithDiscount(discount.value, amountArray.value),
+            customerType: customerType.value,
+            discountPercentage: discount.value,
+            datetime: new Date().toLocaleString('th-TH', { hour12: false }),
+            amounts: amountArray.value,
+            isEdited: true,
+            // oldData: {
+            //     total: props.history.total,
+            //     customerType: props.history.customerType,
+            //     discountPercentage: props.history.discountPercentage,
+            //     datetime: props.history.datetime,
+            //     amounts: props.history.amounts,
+            //     isEdited: props.history.isEdited,
+            //     oldData: props.history.oldData,
+            // }
+        }
+        emits('edit', updatedHistory.value);
+    }
+}
+
+const cancelButtonHandler = () => {
+    emits('cancel');
+}
+
+watch([amountArray, customerType], () => {
     if (customerType.value === 'Guest') {
         discount.value = 0;
     } else {
@@ -78,6 +119,20 @@ watch([amountArray.value, customerType], () => {
         if (getTotal(amountArray.value) < 400) {
             discount.value = 0;
         }
+    }
+}, { deep: true });
+
+onMounted(() => {
+    if (props.history === undefined) {
+        console.log('props history is undefined');
+        amountArray.value = [];
+        discount.value = 0;
+        customerType.value = 'Guest';
+    } else {
+        console.log('props history is not undefined');
+        amountArray.value = props.history.amounts;
+        discount.value = props.history.discountPercentage;
+        customerType.value = props.history.customerType;
     }
 });
 </script>
@@ -150,13 +205,23 @@ watch([amountArray.value, customerType], () => {
             </div>
 
             <div class="flex flex-col mx-10">
-                <p class="text-right text-3xl font-semibold" style="color: grey">Subtotal: {{ getTotal(amountArray) }} ฿</p>
+                <p class="text-right text-3xl font-semibold" style="color: grey">Subtotal: {{
+                    numberFormat(getTotal(amountArray)) }} ฿</p>
                 <p class="text-right text-3xl font-semibold" style="color: red">Discount: {{
-                    getDiscount(discount, amountArray) }} ฿</p>
-                <p class="text-right text-3xl font-semibold" style="color: green">Total: {{ getTotalWithDiscount(discount,
-                    amountArray) }} ฿</p>
-                <div class="flex flex-row justify-end mt-2">
-                    <button class="btn gap-2 w-36" @click="addToHistory()">
+                    numberFormat(getDiscount(discount, amountArray)) }} ฿</p>
+                <p class="text-right text-3xl font-semibold" style="color: green">Total: {{
+                    numberFormat(getTotalWithDiscount(discount,
+                        amountArray)) }} ฿</p>
+                <div class="flex flex-row justify-end mt-2 space-x-3">
+                    <button class="btn btn-error gap-2 w-36" @click="cancelButtonHandler()" v-if="props.history">
+                        Cancel
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
+                        </svg>
+                    </button>
+                    <button class="btn gap-2 w-36" @click="confirmButtonHandler()">
                         Confirm
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
                             stroke="currentColor">
