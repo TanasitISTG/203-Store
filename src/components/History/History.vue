@@ -107,8 +107,8 @@ onMounted(async () => {
             <div v-for="item in historyItems" :key="item.id">
                 <Row>
                     <template #firstRow>
-                        <DeleteIcon class="mr-2 my-auto" @click="deleteHistory(item.id)" />
-                        <EditIcon class="mr-2 my-auto" @click="setEditMode(item)" />
+                        <DeleteIcon class="mr-2 my-auto cursor-pointer" @click="deleteHistory(item.id)" />
+                        <EditIcon class="mr-2 my-auto cursor-pointer" @click="setEditMode(item)" />
                         <p>{{ item.datetime }}</p>
                     </template>
                     <template #secondRow>
