@@ -20,6 +20,9 @@ const router = createRouter({
       component: History,
     },
   ],
+
+  linkActiveClass: "text-blue-500",
+  linkExactActiveClass: "text-blue-500",
 });
 
 export default router;
