@@ -1,15 +1,15 @@
 {
   "history": [
     {
-      "total": 1000,
-      "customerType": "Guest",
-      "discountPercentage": 0,
-      "datetime": "1/4/2566 16:50:56",
+      "id": 1,
+      "total": 900,
+      "customerType": "Customer",
+      "discountPercentage": 10,
+      "datetime": "1/4/2566 19:47:02",
       "amounts": [
         1000
       ],
-      "isEdited": false,
-      "id": 1
+      "isEdited": true
     },
     {
       "id": 2,
@@ -23,6 +23,29 @@
         1000
       ],
       "isEdited": true
+    },
+    {
+      "total": 977.6,
+      "customerType": "Customer",
+      "discountPercentage": 20,
+      "datetime": "1/4/2566 19:38:08",
+      "amounts": [
+        1000,
+        222
+      ],
+      "isEdited": false,
+      "id": 3
+    },
+    {
+      "total": 111,
+      "customerType": "Guest",
+      "discountPercentage": 0,
+      "datetime": "1/4/2566 20:04:02",
+      "amounts": [
+        111
+      ],
+      "isEdited": false,
+      "id": 4
     }
   ]
 }
