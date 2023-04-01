@@ -207,7 +207,7 @@ onMounted(() => {
             <div class="flex flex-col mx-10">
                 <p class="text-right text-3xl font-semibold" style="color: grey">Subtotal: {{
                     numberFormat(getTotal(amountArray)) }} ฿</p>
-                <p class="text-right text-3xl font-semibold" style="color: red">Discount: {{
+                <p class="text-right text-3xl font-semibold" style="color: red">Discount: -{{
                     numberFormat(getDiscount(discount, amountArray)) }} ฿</p>
                 <p class="text-right text-3xl font-semibold" style="color: green">Total: {{
                     numberFormat(getTotalWithDiscount(discount, amountArray)) }} ฿</p>
