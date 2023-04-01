@@ -1,60 +1,28 @@
 {
   "history": [
     {
-      "amount": 999.9,
-      "customerType": "Customer",
-      "discountPercentage": 10,
-      "timestamp": "28/3/2566 18:25:25",
+      "total": 1000,
+      "customerType": "Guest",
+      "discountPercentage": 0,
+      "datetime": "1/4/2566 16:50:56",
       "amounts": [
-        1111
+        1000
       ],
-      "isEditted": false,
-      "oldData": null,
+      "isEdited": false,
       "id": 1
     },
     {
-      "amount": 527.25,
-      "customerType": "Customer",
-      "discountPercentage": 5,
-      "timestamp": "28/3/2566 18:25:54",
-      "amounts": [
-        555
-      ],
-      "isEditted": false,
-      "oldData": null,
-      "id": 2
-    },
-    {
-      "amount": 111,
+      "id": 2,
+      "total": 1300,
       "customerType": "Guest",
       "discountPercentage": 0,
-      "timestamp": "28/3/2566 18:27:09",
+      "datetime": "1/4/2566 17:19:24",
       "amounts": [
-        111
+        200,
+        100,
+        1000
       ],
-      "isEditted": false,
-      "oldData": null,
-      "id": 3
-    },
-    {
-      "amount": 0,
-      "customerType": "Customer",
-      "discountPercentage": 0,
-      "timestamp": "28/3/2566 18:48:12",
-      "amounts": [],
-      "isEditted": false,
-      "oldData": null,
-      "id": 4
-    },
-    {
-      "amount": 0,
-      "customerType": "Guest",
-      "discountPercentage": 0,
-      "timestamp": "28/3/2566 18:48:15",
-      "amounts": [],
-      "isEditted": false,
-      "oldData": null,
-      "id": 5
+      "isEdited": true
     }
   ]
 }
