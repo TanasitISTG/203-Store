@@ -7,8 +7,7 @@ const router = createRouter({
   routes: [
     {
       path: "/",
-      name: "Home",
-      component: Cashier,
+      redirect: "/cashier",
     },
     {
       path: "/cashier",
