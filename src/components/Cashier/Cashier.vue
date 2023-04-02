@@ -104,19 +104,19 @@ watch([amountArray, customerType], () => {
     if (customerType.value === 'Guest') {
         discount.value = 0;
     } else {
-        if (getTotal(amountArray.value) >= 400) {
+        if (getTotal(amountArray.value) >= 5000) {
             discount.value = 5;
         }
-        if (getTotal(amountArray.value) >= 800) {
+        if (getTotal(amountArray.value) >= 8000) {
             discount.value = 10;
         }
-        if (getTotal(amountArray.value) >= 1200) {
+        if (getTotal(amountArray.value) >= 15000) {
             discount.value = 20;
         }
-        if (getTotal(amountArray.value) >= 1600) {
+        if (getTotal(amountArray.value) >= 30000) {
             discount.value = 30;
         }
-        if (getTotal(amountArray.value) < 400) {
+        if (getTotal(amountArray.value) < 5000) {
             discount.value = 0;
         }
     }
@@ -125,9 +125,7 @@ watch([amountArray, customerType], () => {
 onMounted(() => {
     if (props.history === undefined) {
         console.log('props history is undefined');
-        amountArray.value = [];
-        discount.value = 0;
-        customerType.value = 'Guest';
+        return;
     } else {
         console.log('props history is not undefined');
         amountArray.value = props.history.amounts;
