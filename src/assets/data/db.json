@@ -46,6 +46,19 @@
       ],
       "isEdited": false,
       "id": 4
+    },
+    {
+      "total": 3850,
+      "customerType": "Customer",
+      "discountPercentage": 30,
+      "datetime": "2/4/2566 17:39:59",
+      "amounts": [
+        100,
+        400,
+        5000
+      ],
+      "isEdited": false,
+      "id": 5
     }
   ]
 }
